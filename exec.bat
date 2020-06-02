@@ -1,0 +1,1 @@
+call java -jar "C:\Users\floriano.peixoto\Desenvolvimento\CC3\CC3\dist\CC3_V2.jar"
