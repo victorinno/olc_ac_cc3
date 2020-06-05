@@ -184,7 +184,6 @@ public class CC3 {
 	public void criarPoder(Lutador lutador) {
 		Scanner sc;
 		int opt;
-		Writer writer = null;
 		try {
 			System.out.println("Escolha o tipo de poder: ");
 			System.out.println("1 - Moderado");
@@ -224,14 +223,7 @@ public class CC3 {
 			Logger.getLogger(CC3.class.getName()).log(Level.SEVERE, null, ex);
 		} catch (IOException ex) {
 			Logger.getLogger(CC3.class.getName()).log(Level.SEVERE, null, ex);
-		} finally {
-			try {
-				writer.close();
-			} catch (IOException ex) {
-				Logger.getLogger(CC3.class.getName()).log(Level.SEVERE, null,
-						ex);
-			}
-		}
+		} 
 	}
 
 	public void criarDefesa(Lutador lutador) {
@@ -364,12 +356,12 @@ public class CC3 {
 		Poder p = a.getPoderes().get(poder - 1);
 		if (a.getPowerUp() >= p.getNivel()) {
 			
-			a.getIventorio().getAcessorios()[0].ativar(a);
-			int apup = a.getIventorio().getAcessorios()[0].pup();
+//			a.getIventorio().getAcessorios()[0].ativar(a);
+//			int apup = a.getIventorio().getAcessorios()[0].pup();
 			a.setPowerUp(p.getNivel() == 1 ? a.getPowerUp() - 0 : a
-					.getPowerUp() - p.getNivel() + apup);
+					.getPowerUp() - p.getNivel() /*+ apup*/);
 			System.out.println("Powerup - " + p.getNivel() + " = "
-					+ a.getPowerUp() + apup);
+					+ a.getPowerUp() /*+ apup*/);
 			Integer pericia = a.getPericia() + (p.getPericia() * p.getNivel());
 			Integer forca = a.getForca() + (p.getForca() * p.getNivel());
 			System.out.println(pericia + "/" + forca + "/" + p.getNome());
